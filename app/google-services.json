@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "390351316044",
+    "firebase_url": "https://qrinventory-sp28.firebaseio.com",
+    "project_id": "qrinventory-sp28",
+    "storage_bucket": "qrinventory-sp28.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:390351316044:android:1bf90f55fefa14092b80e9",
+        "android_client_info": {
+          "package_name": "com.ananda.qrinventory"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "390351316044-nr2je8ge6rnd8tb8239idt1ef0thqkfj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ananda.qrinventory",
+            "certificate_hash": "0e2043e911b9e3813ba410e71099f63c44a33c5c"
+          }
+        },
+        {
+          "client_id": "390351316044-iu53si97d9nsot8h6d9sa66jc4437l9u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-NXs6YYHqAocTI8I1dKl3XIzFrjSrv3Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "390351316044-iu53si97d9nsot8h6d9sa66jc4437l9u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
