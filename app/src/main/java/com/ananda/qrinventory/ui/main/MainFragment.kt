@@ -34,7 +34,6 @@ class MainFragment : Fragment() {
         btn_insert.setOnClickListener {
             ref.push().setValue("Data")
         }
-        //ss
     }
 
 
