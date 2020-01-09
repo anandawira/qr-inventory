@@ -1,7 +1,7 @@
 package com.ananda.qrinventory
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.ananda.qrinventory.ui.main.MainFragment
 
 class MainActivity : AppCompatActivity() {
@@ -15,5 +15,6 @@ class MainActivity : AppCompatActivity() {
                 .commitNow()
         }
     }
+
 
 }
