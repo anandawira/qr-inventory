@@ -1,3 +1,36 @@
 <resources>
     <string name="app_name">QR Inventory</string>
+
+    <string-array name="battery_models">
+        <item>CR2016</item>
+        <item>CR2025</item>
+        <item>CR2032</item>
+        <item>CR2032HL</item>
+        <item>CR2430</item>
+        <item>CR2450</item>
+        <item>CR2032W</item>
+        <item>CR2450W</item>
+    </string-array>
+
+    <string-array name="battery_monograms">
+        <item>SONY</item>
+        <item>MURATA</item>
+        <item>SEVEN &amp; I</item>
+        <item>PANASONIC</item>
+        <item>ENERGIZER</item>
+        <item>VARTA</item>
+    </string-array>
+
+    <string-array name="battery_specs">
+        <item>SP001</item>
+        <item>SP002</item>
+        <item>SP003</item>
+        <item>SP004</item>
+        <item>SP005</item>
+        <item>SP006</item>
+        <item>SP007</item>
+        <item>SP008</item>
+        <item>SP009</item>
+        <item>SP010</item>
+    </string-array>
 </resources>
