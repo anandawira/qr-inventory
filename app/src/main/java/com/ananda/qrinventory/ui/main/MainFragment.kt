@@ -29,6 +29,13 @@ class MainFragment : Fragment() {
         return inflater.inflate(R.layout.main_fragment, container, false)
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        val result = 0
+        requestPermissions(arrayOf(android.Manifest.permission.CAMERA), result)
+    }
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
@@ -84,6 +91,10 @@ class MainFragment : Fragment() {
                     spec_edit_text.showDropDown()
                 }
             }
+
+        show_scanner_button.setOnClickListener {
+            startQRScanner()
+        }
     }
 
     private fun clearAll() {
@@ -93,6 +104,18 @@ class MainFragment : Fragment() {
         lot_edit_text.setText("")
         quantity_edit_text.setText("")
         remarks_edit_text.setText("")
+    }
+
+    private fun startQRScanner() {
+        scanner_view.startCamera()
+        scanner_view.visibility = View.VISIBLE
+        show_scanner_button.visibility = View.GONE
+        scanner_view.resumeCameraPreview {
+            Toast.makeText(activity, it.text, Toast.LENGTH_SHORT).show()
+            scanner_view.visibility = View.GONE
+            show_scanner_button.visibility = View.VISIBLE
+            scanner_view.stopCamera()
+        }
     }
 
 
