@@ -50,9 +50,12 @@ class MainFragment : Fragment() {
                 quantity = quantity_edit_text.text.toString(),
                 remarks = remarks_edit_text.text.toString()
             )
-            ref.push().setValue(inventoryTag)
-            Toast.makeText(activity, "Data sent to database", Toast.LENGTH_SHORT)
-                .show()
+            ref.push()
+                .setValue(inventoryTag)
+                .addOnSuccessListener {
+                    Toast.makeText(activity, "Data sent to database", Toast.LENGTH_SHORT)
+                        .show()
+                }
             clearAll()
         }
 
@@ -111,7 +114,16 @@ class MainFragment : Fragment() {
         scanner_view.visibility = View.VISIBLE
         show_scanner_button.visibility = View.GONE
         scanner_view.resumeCameraPreview {
-            Toast.makeText(activity, it.text, Toast.LENGTH_SHORT).show()
+            val result = it.text.split("-")
+            if (result.size == 4) {
+                model_edit_text.setText(result[0])
+                monogram_edit_text.setText(result[1])
+                spec_edit_text.setText(result[2])
+            } else {
+                Toast.makeText(activity, "Incorrect qr code", Toast.LENGTH_SHORT)
+                    .show()
+            }
+
             scanner_view.visibility = View.GONE
             show_scanner_button.visibility = View.VISIBLE
             scanner_view.stopCamera()
