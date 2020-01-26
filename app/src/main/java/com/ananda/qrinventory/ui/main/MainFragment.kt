@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.ananda.qrinventory.InventoryTag
@@ -96,7 +97,12 @@ class MainFragment : Fragment() {
             }
 
         show_scanner_button.setOnClickListener {
-            startQRScanner()
+            if (scanner_view.isVisible) {
+                scanner_view.visibility = View.GONE
+                scanner_view.stopCamera()
+            } else {
+                startQRScanner()
+            }
         }
     }
 
@@ -112,7 +118,6 @@ class MainFragment : Fragment() {
     private fun startQRScanner() {
         scanner_view.startCamera()
         scanner_view.visibility = View.VISIBLE
-        show_scanner_button.visibility = View.GONE
         scanner_view.resumeCameraPreview {
             val result = it.text.split("-")
             if (result.size == 4) {
@@ -125,7 +130,6 @@ class MainFragment : Fragment() {
             }
 
             scanner_view.visibility = View.GONE
-            show_scanner_button.visibility = View.VISIBLE
             scanner_view.stopCamera()
         }
     }

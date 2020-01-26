@@ -188,7 +188,7 @@
         android:id="@+id/show_scanner_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Show QR Code Scanner"
+        android:text="Show/Hide QR Code Scanner"
         app:layout_constraintEnd_toEndOf="@+id/spec_text_input"
         app:layout_constraintStart_toStartOf="@+id/model_text_input"
         app:layout_constraintTop_toBottomOf="@+id/scanner_view" />
