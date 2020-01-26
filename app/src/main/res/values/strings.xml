@@ -33,4 +33,5 @@
         <item>SP009</item>
         <item>SP010</item>
     </string-array>
+    <string name="title_activity_audit">AuditActivity</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.ananda.qrinventory.ui.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import com.ananda.qrinventory.AuditActivity
 import com.ananda.qrinventory.InventoryTag
 import com.ananda.qrinventory.R
 import com.google.firebase.database.FirebaseDatabase
@@ -104,6 +106,13 @@ class MainFragment : Fragment() {
                 startQRScanner()
             }
         }
+
+        fab.setOnClickListener {
+            val intent = Intent(activity, AuditActivity::class.java)
+            startActivity(intent)
+        }
+
+
     }
 
     private fun clearAll() {
